@@ -1,7 +1,7 @@
 {
   "name": "otomatic-absence",
   "scripts": {
-    "build": "bun build src/index.ts --outdir ./public",
+    "build": "bun build src/index.ts --compile --outfile myBinary",
     "dev": "bun run --hot src/index.ts"
   },
   "dependencies": {
