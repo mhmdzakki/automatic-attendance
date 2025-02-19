@@ -9,7 +9,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "api/[[route]]"
+      "dest": "api/[[route]].ts"
     }
   ],
   "installCommand": "bun install",
