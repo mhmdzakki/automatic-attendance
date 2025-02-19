@@ -21,4 +21,4 @@ app.get('/absence', async(c: Context) => {
     return c.text(await data.text());
 })
 
-export default app
+export default app.fetch
