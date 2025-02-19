@@ -2,17 +2,17 @@ import { Hono } from 'hono';
 import { handle } from 'hono/vercel';
 
 // Import app utama dari src/index.ts
-// import app from '../src/index';
+import app from '../src/index';
 
-const app = new Hono().basePath("/api");
+// const app = new Hono().basePath("/api");
 
-app.get("/", (c) => {
-    return c.json({message:"hello from Hono"})
-})
+// app.get("/", (c) => {
+//     return c.json({message:"hello from Hono"})
+// })
 
-app.get("/hallo", (c) => {
-    return c.json({message:"hello"})
-})
+// app.get("/hallo", (c) => {
+//     return c.json({message:"hello"})
+// })
 
 const handler =  handle(app);
 
