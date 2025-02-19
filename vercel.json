@@ -11,7 +11,5 @@
       "src": "/(.*)",
       "dest": "/api/[[route]]"
     }
-  ],
-  "installCommand": "bun install",
-  "buildCommand": "bun run build"
+  ]
 }
