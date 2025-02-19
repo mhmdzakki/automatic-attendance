@@ -1,4 +1,3 @@
-import { $ } from 'bun'
 import { Context, Hono } from 'hono'
 
 const app = new Hono()
@@ -8,7 +7,7 @@ app.get('/', (c) => {
 })
 
 app.get('/absence', async(c: Context) => {
-    const command = await $`curl -i -X POST ${process.env.LOGIN_URL} -H "Content-Type: application/x-www-form-urlencoded" -d "username=${process.env.NIM}&password=${process.env.PASSWORD}"`.quiet();
+    const command = await Bun.$`curl -i -X POST ${process.env.LOGIN_URL} -H "Content-Type: application/x-www-form-urlencoded" -d "username=${process.env.NIM}&password=${process.env.PASSWORD}"`.quiet();
     const token = command.text().split(" ")[15];
 
     const data = await fetch(process.env.ABSENCE_URL + '', {
