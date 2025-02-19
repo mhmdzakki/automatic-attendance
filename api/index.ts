@@ -10,6 +10,10 @@ app.get("/", (c) => {
     return c.json({message:"hello from Hono"})
 })
 
+app.get("/hallo", (c) => {
+    return c.json({message:"hello"})
+})
+
 const handler =  handle(app);
 
 export const GET = handler;
