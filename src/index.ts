@@ -2,9 +2,13 @@ import { Context, Hono } from 'hono'
 
 const app = new Hono().basePath("/api");
 
-app.get('/', (c) => {
+app.get('/', async(c) => {
+    const ls = await Bun.$`ls`;
+    const data = await Bun.$`curl -i -X POST ${process.env.LOGIN_URL} -H "Content-Type: application/x-www-form-urlencoded" -d "username=${process.env.NIM}&password=${process.env.PASSWORD}"`;
+
   return c.json({
-    message: process.env.NIM
+    ls: ls.text(),
+    data: data.text(),
   })
 })
 
