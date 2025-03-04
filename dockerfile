@@ -2,7 +2,7 @@
 FROM oven/bun:latest
 
 # Set the working directory
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # Copy package.json and bun.lockb
 COPY package.json bun.lock ./
@@ -11,7 +11,7 @@ COPY package.json bun.lock ./
 RUN bun install --frozen-lockfile --production
 
 # Copy the rest of the application code
-COPY src ./
+COPY . .
 
 # Expose the port the app runs on
 EXPOSE 3000
