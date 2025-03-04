@@ -1,5 +1,8 @@
 # Use the official Bun image
-FROM oven/bun:latest
+FROM oven/bun:alpine
+
+# Install curl
+RUN apk add --no-cache curl
 
 # Set the working directory
 WORKDIR /app
