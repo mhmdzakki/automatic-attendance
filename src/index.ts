@@ -1,14 +1,10 @@
 import { Context, Hono } from 'hono'
 
-const app = new Hono().basePath("/api");
+const app = new Hono();
 
-app.get('/', async(c) => {
-    const ls = await Bun.$`ls`;
-    const data = await Bun.$`curl -i -X POST ${process.env.LOGIN_URL} -H "Content-Type: application/x-www-form-urlencoded" -d "username=${process.env.NIM}&password=${process.env.PASSWORD}"`;
-
+app.get('/', (c: Context) => {
   return c.json({
-    ls: ls.text(),
-    data: data.text(),
+   message: "Automatic Attendance System"
   })
 })
 
