@@ -4,9 +4,10 @@ const app = new Hono().basePath("/api");
 
 app.get('/', (c) => {
   return c.json({
-    message: 'Hello Hono!'
+    message: process.env.NIM
   })
 })
+
 
 app.get('/absence', async(c: Context) => {
     try {
